@@ -15,8 +15,6 @@ var bodyParser = require('body-parser');
 var app = express();
 var urlencodedParser = bodyParser.urlencoded({ extended: false});
 var jsonParser = bodyParser.json();
-var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
 
 
 // view engine setup
