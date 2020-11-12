@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+   <link href="/stylesheets/style.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="fontawesome/js/fontawesome.min.js"></script>
+   <script>
+    $('form').on('submit', (e)) => {
+      e.preventDefault();
+
+      var email = $('#email').val().trim();
+      var name = $('#name').val().trim();
+      var message = $('#contact-message').val().trim();
+
+      var data = {
+        email,
+        name,
+        message
+      }
+
+      $.post('/email', 'data', function()) {
+        console.log('Server recieved data')
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img src="images/logo.png"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse-main">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="active" href="/">Home</a></li> 
+          <li><a class="nav1"href="/holzpellets-kaufen">Holzpellets Kaufen</a></li>
+          <li><a href="/sackware">Sackware</a></li>
+          <li><a href="/qualitat">Qualit&auml;t</a></li>
+          <li><a href="/lieferung">Lieferung</a></li>
+          <li><a href="/kontakt">Kontakt</a></li>
+          <li><i class="fa fa-phone" aria-hidden="true"></i></li><p class="number">+49 176 83864868 (WhatsApp)</p>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="contact-sec">
+       <div class="contact-overlay1">
+        <form method="POST" action="/email">
+          <h3 class="contact-heading">Schreiben Sie uns</h3>
+          <p class="contact-P">Wir werden uns so schnell wie m&ouml;glich bei Ihnen melden.</p>
+          <input type = "text" name = "name" placeholder="Ihr Name"><br></br>
+          <input type = "text" name = "email" placeholder="Ihr E-mail Addresse"><br></br>
+          <textarea class="form-control" placeholder="Ihre Nachricht" id="contact-message" rows="9" name = "message"></textarea>
+          <p style="font-weight: 300; font-size: 15px; text-align: left; letter-spacing: 1px; padding-top: 20px;">Oder kontaktieren sie uns &uuml;ber WhatsApp   
+              (+49 176 83864868 )</p>
+          <div id = "sendMessage">
+           <button type="submit" class="btn btn-success btn1 btn-lg" style="margin-left: 150px;">Senden</button>
+            </div>
+        </form>
+      </div>
+      <div class="contact-add">
+          <i class="fa fa-location-arrow" aria-hidden="true"></i>
+          <h4>Neuss</h4>
+          <p><address>Im Taubental 58, 
+             41468  Neuss, Deutschland</p></address>
+          <p><address>
+            +49 176 83864868 </address></p>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="container-fluid" id="footer">
+    <footer class="footer">
+      <div class="col-sm-3">
+        <ul class="list-unstyled">
+          <li><a href="/">Home</a></li>
+          <li><a href="/sackware">Sackware</a></li>
+          <li><a href="/holzpellets-kaufen">Holzpellets Kaufen</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <ul class="list-unstyled">
+          <li><a href="/lieferung">Lieferung</a></li>
+          <li><a href="/qualitat">Qualit&auml;t</a></li>
+          <li><a href="/kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <address>
+          <strong>Rox Pellets</strong>
+         Im Taubental 58,<br>
+          41468  Neuss, Deutschland<br>
+          <abbr title="Phone">P:</abbr> 
+          +49 176 83864868
+        </address>
+       </div>
+       <div class="col-sm-3">
+        <ul class="list-unstyled">
+          <li><p>Folgen Sie uns in sozialen Netzen:</p></li>
+          <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+      </div>
+      </footer>
+      <p style="text-align: center; padding-right: 300px; padding-top: 300px; font-size: 13px; font-weight: 300;">&copy; 2020 Rox Pellets</p>
+     </div>
+  </div>
+
+</body>
+</html>
