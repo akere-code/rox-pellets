@@ -9,6 +9,25 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="fontawesome/js/fontawesome.min.js"></script>
  <link href="/stylesheets/style.css" rel="stylesheet" />
+   <script>
+    $('form').on('submit', (e)) => {
+      e.preventDefault();
+
+      var email = $('#email').val().trim();
+      var name = $('#name').val().trim();
+      var message = $('#contact-message').val().trim();
+
+      var data = {
+        email,
+        name,
+        message
+      }
+
+      $.post('/email', 'data', function()) {
+        console.log('Server recieved data')
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -41,15 +60,15 @@
   <div class="container-fluid">
       <div class="intro"> 
           <div class="row">
-              <div class="col-sm-2"></div>
-                    <div class="col-sm-8">
+              <div class="col-lg-2"></div>
+                    <div class="col-lg-8">
           <p><h2 class="introH">Beste Pelletspreise und nat&uuml;rliche Rohstoffe</h2></p>
-          <div class="col-sm-1"></div>
-          <div class="col-sm-10">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-10">
           <p class="intro-body">Die Energiequelle der Zukunft f&uuml;r Privathaushalte sorgt gleichzeitig f&uuml;r saubere Luft und ein harmonisches Landschaftsbild. Holzpellets bestehen komplett aus unbehandelten Stoffen aus der Natur unserer W&auml;lder. Sie enthalten keine k&uuml;nstlichen Bestandteile wie beispielsweise Leim oder andere Bindemittel. Sie setzen somit keine sch&auml;dlichen Emissionen frei und stehen f&uuml;r eine nat&uuml;rliche W&auml;rme in Ihrem behaglichen Heim. Deshalb brauchen Sie weder sch&auml;dliche Auswirkungen auf Ihre Gesundheit noch hohe Kosten zu f&uuml;rchten. So wie schon unsere Vorfahren die W&auml;rme eines lebendigen Feuers genossen haben, wird auch in Zukunft die W&auml;rme wieder aus der Natur kommen.</p>
         </div>
-          <div class="col-sm-1"></div>
-          <div class="col-sm-2"></div>
+          <div class="col-lg-1"></div>
+          <div class="col-lg-2"></div>
             </div>
         </div>
       </div>
@@ -102,12 +121,12 @@
 
   <div class="container-fluid">
       <div class="row">
-          <div class="col-sm-6 product-info">
+          <div class="col-lg-6 product-info">
               <p>Holzpellets sind aber nicht gleich Holzpellets. Wie bei den meisten Produktgruppen gibt es auch in diesem Bereich gro&szlig;e Unterschiede in der Qualit&auml;t. Wenn Sie Holzpellets online bestellen, achten Sie vor Abschluss des Kaufs unbedingt auf einen niedrigen Aschegehalt und einen niedrigen Feuchtigkeitsgehalt! Der Brennwert muss hoch sein. Es gibt, was den Brennwert und die Alltagstauglichkeit betrifft, nichts Besseres als Pellets aus Holz.</p>
               <p>Rox pellets bietet die besten Preise f&uuml;r Holzpellets in S&auml;cken. Sie k&ouml;nnen Pellets in S&auml;cken in unserem Onlineshop oder in unserem Lager kaufen. Unsere Mitarbeiter bieten Ihnen die besten Preise, eine bequeme Zahlungsoption f&uuml;r Sie und die Lieferung von Pellets zu einem f&uuml;r Sie g&uuml;nstigen Zeitpunkt.Unsere Stammkunden k&ouml;nnen mit zus&auml;tzlichen Rabatten und Zahlungsaufsch&uuml;ben f&uuml;r gekaufte Pellets rechnen.
             </p>
           </div>
-          <div class="col-sm-6">
+          <div class="col-lg-6">
               <img src="images/img7.jpg" id="product-img">
           </div>
       </div>
@@ -116,16 +135,16 @@
   <div class="contact-sec">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-6" id="contact-area">
+        <div class="col-lg-6" id="contact-area">
           <h3 id="contact-info">Kontaktieren Sie uns</h3>
-        <div class="col-sm-6">
+        <div class="col-lg-6">
           <address id="section-address">Adresse
   
            <p class="addressP">Im Taubental 58,
            41468 Neuss, Deutschland</p>
           </address>
         </div>
-        <div class="col-sm-6">
+        <div class="col-lg-6">
           <address id="section-contact">Kontakt
   
             <p class="contactP">+49 176 83864868
@@ -133,7 +152,7 @@
           </address>
           </div>
         </div>
-      <div class="col-sm-6">
+      <div class="col-lg-6">
         <div class="contact-overlay">
            <form action="/email" method="POST">
             <h3 class="contact-heading">Schreiben Sie uns</h3>
@@ -153,21 +172,21 @@
 
   <div class="container-fluid" id="footer">
     <footer class="footer">
-      <div class="col-sm-3">
+      <div class="col-lg-3">
         <ul class="list-unstyled">
           <li><a href="/">Home</a></li>
           <li><a href="/sackware">Sackware</a></li>
           <li><a href="/holzpellets-kaufen">Holzpellets Kaufen</a></li>
         </ul>
       </div>
-      <div class="col-sm-3">
+      <div class="col-lg-3">
         <ul class="list-unstyled">
           <li><a href="/lieferung">Lieferung</a></li>
           <li><a href="/qualitat">Qualit&auml;t</a></li>
           <li><a href="/kontakt">Kontakt</a></li>
         </ul>
       </div>
-      <div class="col-sm-3">
+      <div class="col-lg-3">
         <address>
           <strong>Rox Pellets</strong>
          Im Taubental 58,<br>
@@ -176,7 +195,7 @@
           +49 176 83864868
         </address>
        </div>
-       <div class="col-sm-3">
+       <div class="col-lg-3">
         <ul class="list-unstyled">
           <li><p>Folgen Sie uns in sozialen Netzen:</p></li>
           <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
